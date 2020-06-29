@@ -1,0 +1,33 @@
+    28: int main(void){ 
+    29:     while(1){ 
+    30:         /* 0b100000000 = 0x100 */ 
+0x08000318 4807      LDR      r0,[pc,#28]  ; @0x08000338
+0x0800031A 4908      LDR      r1,[pc,#32]  ; @0x0800033C
+0x0800031C 4A08      LDR      r2,[pc,#32]  ; @0x08000340
+0x0800031E 2300      MOVS     r3,#0x00
+0x08000320 2401      MOVS     r4,#0x01
+    31:         GPIOB->ODR |= 0x00000100;                   /* Set and Clear the bit using port wide AND and OR instructions - Slowest method */ 
+    32:         delay(); 
+0x08000322 6805      LDR      r5,[r0,#0x00]
+0x08000324 F4457580  ORR      r5,r5,#0x100
+0x08000328 6005      STR      r5,[r0,#0x00]
+    33:         GPIOB->ODR &= !0x00000100;         
+    34:         delay(); 
+    35:         bitAddress = & BitBand(&GPIOB->ODR, 8);   /* Use a run time macro to calculate the bit band alias address - 2nd Fastest method */ 
+0x0800032A 6805      LDR      r5,[r0,#0x00]
+0x0800032C 6003      STR      r3,[r0,#0x00]
+    36:         *bitAddress = 1;                                                                                                                /* Set and Clear the bit */  
+    37:         delay(); 
+0x0800032E 6014      STR      r4,[r2,#0x00]
+    38:         *bitAddress = 0; 
+    39:         delay(); 
+0x08000330 6013      STR      r3,[r2,#0x00]
+    40:         PortB_Bit8 = 1;               /* Set and Clear the bit using a pointer calculated at compile time - Fastest method */ 
+    41:         delay(); 
+0x08000332 600C      STR      r4,[r1,#0x00]
+    42:         PortB_Bit8  = 0;   
+0x08000334 600B      STR      r3,[r1,#0x00]
+    29:     while(1){ 
+0x08000336 E7F4      B        0x08000322
+0x08000338 040C      DCW      0x040C
+0x0800033A 4002      DCW      0x4002
