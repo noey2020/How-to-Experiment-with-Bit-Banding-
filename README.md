@@ -19,7 +19,8 @@ means plenty of space allocation.
 
 Anyways, going back to bit-band regions, 1MB is reserved above 0x20000000 and
 0x40000000 for bit-band. Each bit in real memory is word aliased by about 32MB
-above the base address.
+above the base address. Bit banding techniques allow bit addressing on top of 
+byte addressing in the bit band alias and vice versa in real memory.
 
 To calculate the alias address so we can create a pointer and cast it to memory,
 the given formula is:
