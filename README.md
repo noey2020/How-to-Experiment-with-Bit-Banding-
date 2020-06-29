@@ -9,7 +9,7 @@ of memory space where we have byte addressable memory addresses. They were
 assigned and must be adhered to by the ARM standards body. Silicon vendors must
 be compliant to the specifications and usually they differentiate their products
 by offering differentiated peripherals and custom example code. The designated 
-memory regions allow for 8 classifications for data and instructions. For
+memory regions allow for 6 classifications for data and instructions. For
 example they allocate 0.5GB for the smallest of the first region from 0x00000000
 to 0x20000000. You will notice that is a lot of memory, and also for the other
 regions, hence, a lot of leeway for differentiation. Code is reserved in the 
