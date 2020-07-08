@@ -3,6 +3,10 @@ Tinkering with Bit-Banding and Profiling
 
 Bit-Band and Execution Profiling Experiments	June 29, 2020
 
+I appreciate comments. Shoot me an email at noel_s_cruz@yahoo.com!
+
+Hire Me!
+
 From my previous tutorial on Computer Organization and Memory-Mapped Areas, we 
 dwelt on bit-band regions and bit-band alias. The bit-band region is that part 
 of memory space where we have byte addressable memory addresses. They were 
@@ -110,6 +114,10 @@ Happy coding!
 0x08000338 040C      DCW      0x040C
 
 0x0800033A 4002      DCW      0x4002
+
+I appreciate comments. Shoot me an email at noel_s_cruz@yahoo.com!
+
+Hire Me!
 
 Happy coding once again!!!
 
